@@ -1,0 +1,443 @@
+@import './variables';
+
+html, body{
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+body{
+    font-size: $font-size;
+    font-family: $font-family-alata;
+    font-weight: $font-weight-alata;
+    background-color: $primary-color-white;
+}
+
+.info{
+    color: $primary-color-white;
+} 
+.info:hover{
+    @media (min-width: $desktop-size){
+        border-bottom: .2rem $primary-color-white solid;
+    }
+}
+
+.title{
+    font-family: $font-family-josefin-sans;
+    font-weight: $font-weight-josefin-sans;
+    color: $primary-color-black;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: $font-size + 1.5rem;
+}
+
+.logo{
+    width: 11.9375rem;
+    height: auto;
+}
+
+.menu{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: $primary-color-black;
+    z-index: 8;
+    padding: 1.8125rem;
+    box-sizing: border-box;
+    .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        .info{
+            display: block;
+            color: $primary-color-white;
+            font-family: $font-family-josefin-sans;
+            font-weight: $font-weight-josefin-sans;
+            text-transform: uppercase;
+            font-size: $font-size + .5rem;
+        }
+    }
+    .logo{
+        padding-top: 1.1875rem;
+    }
+    .close{
+        float: right;
+        padding-top: 1.6875rem;
+        display: block;
+        box-sizing: border-box;
+    }
+}
+
+.nav_header{
+    background-image: url(../images/mobile/image-hero.jpg);
+    padding: 1.8125rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    @media (min-width: $desktop-size){
+        background-image: url(../images/desktop/image-hero.jpg);
+        padding-left: 10%;
+        padding-right: 10%;
+        position: relative;
+    }
+    .navigation{
+        width: 100%;
+        height: 2rem;
+        padding-top: 1.1875rem;
+        .logo{
+            float: left;
+            z-index: 9;
+            @media (min-width: $desktop-size){
+                padding-top: 1.6rem;
+            }
+        }
+        .menu_button{
+            float: right;
+            padding-top: .5rem;
+            box-sizing: border-box;
+            @media (min-width: $desktop-size){
+                display: none;
+            }
+        }
+        .text{
+            display: none;
+            @media (min-width: $desktop-size){
+                display: block;
+                float: right;
+                display: flex;
+                flex-direction: row;
+            }
+            .info{
+                @media (min-width: $desktop-size){
+                    display: block;
+                    font-size: $font-size + .5rem;
+                    padding: 0 .975rem
+                }
+            }
+        }
+    }
+    .header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        @media (min-width: $desktop-size){
+            justify-content: flex-start;
+            width: 100%;
+        }
+        .title{
+            text-align: start;
+            max-width: 17.5rem;
+            font-size: 2.5rem;
+            color: $primary-color-white;
+            text-transform: uppercase;
+            font-family: $font-family-josefin-sans;
+            font-weight: $font-weight-josefin-sans;
+            width: 81%;
+            max-height: 15.375rem;
+            border: $primary-color-white solid 0.1875rem;
+            padding: 1.5rem 1.9375rem;
+            @media (min-width: $desktop-size){
+                max-width: 37rem;
+                max-height: 17.3125rem;
+                font-size: 4.375rem;
+                width: 100%;
+            }
+        }
+    }
+    .info{
+        display: none;
+    }
+}
+
+.text_images{
+    margin-top: 7.625rem;
+    .article{
+        padding: 0 1.8125rem;
+        margin-bottom: 6.25rem;
+        @media (min-width: $desktop-size){
+            padding: 0 10.125rem;
+        }
+        .image_mobile{
+            width: 100%;
+            height: auto;
+            @media (min-width: $desktop-size){
+                display: none;
+            }
+        }
+        .image{
+            @media (min-width: $desktop-size){
+                position: relative;
+            }
+            .image_desktop{
+                display: none;
+                @media (min-width: $desktop-size){
+                    display: block;
+                    z-index: 2;
+                }
+            }
+        }
+        .text-bg{
+            @media (min-width: $desktop-size){
+                position: absolute;
+                width: 28.4375rem;
+                height: auto;
+                background-color: $primary-color-white;
+                top: 11.4375rem;
+                right: -7rem;
+                padding: 5.9375rem;
+            }
+            .title{
+                @media (min-width: $desktop-size){
+                    max-width: 20rem;
+                    text-align: left;
+                }
+            }
+            .text{
+                color: $primary-color-very-dark-gray;
+                text-align: center;
+                max-width: 19rem;
+                margin: 0 auto;
+                @media (min-width: $desktop-size){
+                    text-align: left;
+                    max-width: 28rem;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+.creations{
+    padding: 0 1.8125rem;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: (9.5rem - 1.875rem)  repeat(9, 9.5rem);
+    row-gap: 1.875rem;
+    justify-items: center;
+    @media (min-width: $desktop-size){
+        padding: 0 10.125rem;
+        grid-template-columns: repeat(4, 16rem);
+        grid-template-rows: 9.375rem repeat(2, 28.125rem);
+        row-gap: 1.8125rem;
+        column-gap: 1.8125rem;
+        margin-bottom: 11.4375rem;
+        justify-content: center;
+    }
+    .image{
+        width: 100%;
+        max-width: 25.9375rem + 2rem;
+        position: relative;
+    }
+    .image_text{
+        color: $primary-color-white;
+        font-family: $font-family-josefin-sans;
+        font-weight: $font-weight-josefin-sans;
+        text-transform: uppercase;
+        font-size: 1.6875rem;
+        position: absolute;
+        max-width: 9.125rem;
+        bottom: 0rem;
+        left: 1rem;
+    }
+    #title{
+        @media (min-width: $desktop-size){
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+    }
+    #button{
+        grid-row: 10/11;
+        @media (min-width: $desktop-size){
+            grid-column: 4/5;
+            grid-row: 1/2;
+        }
+    }
+    #img1{
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+        ,url(../images/mobile/image-deep-earth.jpg);
+        background-size: 100% 100%;
+        @media (min-width: $desktop-size){
+            grid-column: 1/2;
+            grid-row: 2/3;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+            ,url(../images/desktop/image-deep-earth.jpg);
+        }
+    }
+    #img2{
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+        ,url(../images/mobile/image-night-arcade.jpg);
+        background-size: 100% 100%;
+        @media (min-width: $desktop-size){
+            grid-column: 2/3;
+            grid-row: 2/3;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+            ,url(../images/desktop/image-night-arcade.jpg);
+        }
+    }
+    #img3{
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+        ,url(../images/mobile/image-soccer-team.jpg);
+        background-size: 100% 100%;
+        @media (min-width: $desktop-size){
+            grid-column: 3/4;
+            grid-row: 2/3;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+            ,url(../images/desktop/image-soccer-team.jpg);
+        }
+    }
+    #img4{
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+        ,url(../images/mobile/image-grid.jpg);
+        background-size: 100% 100%;
+        @media (min-width: $desktop-size){
+            grid-column: 4/5;
+            grid-row: 2/3;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+            ,url(../images/desktop/image-grid.jpg);
+        }
+        .image_text{
+            max-width: 2rem;
+        }
+    }
+    #img5{
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+        ,url(../images/mobile/image-from-above.jpg);
+        background-size: 100% 100%;
+        @media (min-width: $desktop-size){
+            grid-column: 1/2;
+            grid-row: 3/4;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+            ,url(../images/desktop/image-from-above.jpg);
+        }
+    }
+    #img6{
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+        ,url(../images/mobile/image-pocket-borealis.jpg);
+        background-size: 100% 100%;
+        @media (min-width: $desktop-size){
+            grid-column: 2/3;
+            grid-row: 3/4;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+            ,url(../images/desktop/image-pocket-borealis.jpg);
+        }
+    }
+    #img7{
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+        ,url(../images/mobile/image-curiosity.jpg);
+        background-size: 100% 100%;
+        @media (min-width: $desktop-size){
+            grid-column: 3/4;
+            grid-row: 3/4;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+            ,url(../images/desktop/image-curiosity.jpg);
+        }
+    }
+    #img8{
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+        ,url(../images/mobile/image-fisheye.jpg);
+        background-size: 100% 100%;
+        @media (min-width: $desktop-size){
+            grid-column: 4/5;
+            grid-row: 3/4;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0))
+            ,url(../images/desktop/image-fisheye.jpg);
+        }
+    }
+    .button{
+        color: $primary-color-black;
+        text-transform: uppercase;
+        border: 0.0625rem $primary-color-black solid;
+        width: 12.4375rem;
+        height: 3.125rem - .8rem;
+        text-align: center;
+        padding-top: .8rem;
+        justify-self: center;
+        @media (min-width: $desktop-size){
+            margin-top: 3rem;
+            margin-left: 3rem;
+        }
+    }
+    .button:hover{
+        @media (min-width: $desktop-size){
+            background-color: $primary-color-black;
+            color: $primary-color-white;
+        }
+    }
+}
+
+.footer{
+    background-color: $primary-color-black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2rem;
+    @media (min-width: $desktop-size){
+        display: grid;
+        grid-template-columns: repeat(2, 23.9375rem);
+        grid-template-rows: repeat(2, 4.625rem);
+        row-gap: 2rem;
+        column-gap: 20%;
+        box-sizing: border-box;
+        margin: 0;
+        padding-bottom: .6rem;
+    }
+    .logo{
+        padding-top: 4.125rem;
+        padding-bottom: 2rem;
+        @media (min-width: $desktop-size){
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+    }
+    .footer_info{
+        padding-bottom: 2.3125rem;
+        text-align: center;
+        @media (min-width: $desktop-size){
+            display: flex;
+            flex-direction: row;
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+    }
+    .info{
+        padding: .2rem 0;
+        @media (min-width: $desktop-size){
+            margin: 0 2rem;
+            margin-left: 0;
+        }
+    }
+    .icons{
+        @media (min-width: $desktop-size){
+            grid-column: 2/3;
+            grid-row: 1/2;
+            align-self: flex-end;
+            justify-self: flex-end;
+        }
+        .icon{
+            padding: 0 .5rem;
+        }
+        .icon:hover{
+            @media (min-width: $desktop-size){
+                border-bottom: .2rem $primary-color-white solid;
+            }
+        }
+    }
+    .text{
+        color: $primary-color-dark-gray;
+        padding-bottom: 2.125rem;
+        @media (min-width: $desktop-size){
+            grid-column: 2/3;
+            grid-row: 2/3;
+            justify-self: flex-end;
+        }
+    }
+}
